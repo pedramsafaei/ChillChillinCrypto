@@ -1,0 +1,12 @@
+This file triggers the regenerate-lockfile.yml workflow.
+
+Branch: fix/package-lock
+Date: 2025-12-14
+Purpose: Regenerate package-lock.json to fix CI/CD failures
+
+The workflow will:
+1. Clean npm cache
+2. Remove old lock file  
+3. Run npm install to regenerate
+4. Run tests to verify
+5. Commit and push the result
