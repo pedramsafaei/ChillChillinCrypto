@@ -3,6 +3,9 @@
 [![CI/CD Pipeline](https://github.com/pedramsafaei/ChillChillinCrypto/workflows/CI%2FCD%20Pipeline/badge.svg)](https://github.com/pedramsafaei/ChillChillinCrypto/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+> ⚠️ **IMPORTANT:** The package-lock.json file needs to be regenerated to fix CI/CD pipeline failures.  
+> **Quick Fix:** Run `./regenerate-lockfile.sh` or see [QUICKSTART_FIX.md](./QUICKSTART_FIX.md) for details.
+
 A comprehensive, feature-rich cryptocurrency tracking application built with React, Redux Toolkit, and modern web technologies. Track real-time cryptocurrency prices, manage your portfolio, set price alerts, and stay updated with the latest market trends.
 
 ## ✨ Features
