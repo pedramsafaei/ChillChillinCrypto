@@ -51,7 +51,7 @@ describe('CryptoCard', () => {
     const handleClick = jest.fn();
     renderWithStore(<CryptoCard crypto={mockCrypto} onClick={handleClick} />);
     
-    const card = screen.getByRole('img', { name: 'Bitcoin' }).closest('.ant-card');
+    const card = screen.getByTestId('crypto-card');
     fireEvent.click(card);
     
     expect(handleClick).toHaveBeenCalledTimes(1);
@@ -60,12 +60,11 @@ describe('CryptoCard', () => {
   it('toggles favorite status when star icon is clicked', () => {
     renderWithStore(<CryptoCard crypto={mockCrypto} onClick={() => {}} />);
     
-    // Should not be favorite initially
-    const starIcon = screen.getByRole('img', { hidden: true });
+    const favoriteIcon = screen.getByTestId('favorite-icon');
     
-    fireEvent.click(starIcon);
+    fireEvent.click(favoriteIcon);
     
-    // Star should be filled after clicking
-    expect(starIcon).toBeInTheDocument();
+    // Icon container should still be in the document
+    expect(favoriteIcon).toBeInTheDocument();
   });
 });

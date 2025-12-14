@@ -30,12 +30,19 @@ const CryptoCard = ({ crypto, onClick }) => {
       hoverable
       onClick={onClick}
       style={{ marginBottom: '16px', cursor: 'pointer' }}
+      data-testid="crypto-card"
       extra={
-        <div onClick={handleFavoriteClick} style={{ cursor: 'pointer', fontSize: '18px' }}>
+        <div 
+          onClick={handleFavoriteClick} 
+          style={{ cursor: 'pointer', fontSize: '18px' }}
+          data-testid="favorite-icon"
+          role="button"
+          aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+        >
           {isFavorite ? (
-            <StarFilled style={{ color: '#faad14' }} />
+            <StarFilled style={{ color: '#faad14' }} aria-label="Favorite" />
           ) : (
-            <StarOutlined style={{ color: '#8c8c8c' }} />
+            <StarOutlined style={{ color: '#8c8c8c' }} aria-label="Not favorite" />
           )}
         </div>
       }
